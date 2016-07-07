@@ -1,0 +1,28 @@
+1.-tramite de visa
+ID:UC001 
+
+interedas:
+-usuario normal
+
+
+pre-condicion:
+-El usuario debe estar registrado en el sistema
+-el usuario debera tener escaneados los archivos originales que se necesiten
+
+post-condiciones:
+-debera de enviar un mensage en caso de no poder accesar al sistema 
+-Debera desplegar un mensage especificando que te tramite a sido solicitado exitosamente 
+-Enviar un correo notificando cuando el tramite ha sido aceptado o rechazado
+-Al terminar el tramite el sistema te regresara a la pantalla anterior
+
+flujo principal:
+-El usuario inicia sesion
+-Al elegir el tramite de visa se desplegara las opciones de los tipos de visa disponibles
+-Una vez seleccionado el tipo de visa aparecera un formato de llenado y solicitud de archivos correspondientes
+-El sistema debera avisar si algun campo permanece en blanco
+-Al finalizar el tramite se desplegara un mensage de enviado
+-Al salir el sistema regresara a la pantalla anterior
+
+flujo alternativo:
+-El sistema desplegara un mensage de error en caso de no poder accesar al sistema
+-Desplegar un mensage en caso de no poder enviar el tramite
