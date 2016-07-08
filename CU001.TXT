@@ -18,7 +18,7 @@ post-condiciones:
 flujo principal:
 -El usuario inicia sesion
 -Al elegir el tramite de visa se desplegara las opciones de los tipos de visa disponibles
--Una vez seleccionado el tipo de visa aparecera un formato de llenado y solicitud de archivos correspondientes
+-Una vez seleccionado el tipo de visa aparecera un formato de llenado y solicitud de archivos correspondientes tales como(pasaporte vigente,comprovante de nacionalidad y una fotografia con no mas de 6 meses de antiguedad)
 -El sistema debera avisar si algun campo permanece en blanco
 -Al finalizar el tramite se desplegara un mensage de enviado
 -Al salir el sistema regresara a la pantalla anterior
