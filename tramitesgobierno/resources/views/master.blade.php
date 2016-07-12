@@ -4,7 +4,7 @@
  <html lan="en">
     <head>
       <meta charset="UTF-8">
-      <title>Asignar de Usuarios</title>
+      <title>Principal</title>
        <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
       <script src="{{asset("js/jquery.js")}}"> </script>     
 
@@ -41,11 +41,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Editar</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Cerrar sesion</a></li>
           </ul>
         </li>
       </ul>
@@ -59,6 +58,7 @@
     <font color="red"> Gobierno del estado </font>
   </div>
  </div>
+ <script src="{{asset("js/bootstrap.js")}}"></script>
 
 
   </body>
