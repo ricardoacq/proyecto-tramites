@@ -4,7 +4,7 @@
  <html lan="en">
     <head>
       <meta charset="UTF-8">
-      <title>Principal</title>
+      <title></title>
        <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
       <script src="{{asset("js/jquery.js")}}"> </script>     
 
@@ -28,10 +28,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li ><a href="{{url('/asignarUsuarios')}}">Acta de Nacimiento</a></li>
-        <li ><a href="{{url('/asignarUsuarios')}}">Renovar Licencia </a></li>
-        <li><a href="{{url('/asignarUsuarios')}}">Becas </a></li>
-        <li><a href="{{url('/asignarUsuarios')}}">Visa</a></li>
+        <li ><a href="#">Acta de Nacimiento</a></li>
+        <li ><a href="#">Renovar Licencia </a></li>
+        <li><a href="#">Becas </a></li>
+        <li><a href="#">Visa</a></li>
         <li class="dropdown">
           
         </li>
@@ -39,7 +39,7 @@
      
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$usuario}} <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Perfil</a></li>
             <li><a href="#">Editar</a></li>
@@ -52,6 +52,20 @@
   </div><!-- /.container-fluid -->
 </nav>
  
+ <div class="container">
+   <div class="row">
+    <div class="col-xs-12 text-center well">
+       @yield('encabezado') 
+         </div>
+        </div>
+       <hr>
+         <div class="row">
+        <div class="col-xs-12">
+       @yield('contenido')
+     </div>
+    </div>
+</div>
+
  <div class="row">
   <div class="cik-xs-12 text-center">
     <hr>
@@ -59,8 +73,6 @@
   </div>
  </div>
  <script src="{{asset("js/bootstrap.js")}}"></script>
-
-
   </body>
 
   </html> 

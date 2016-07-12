@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
         <title>Registrate ahora para realizar tus tramites en lìnea</title>
-        <link rel="stylesheet" href="bootstrap.css">
-        <script src="{{asset("js/jquery-2.0.0.js")}}"></script>
+         <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
+        <script src="{{asset("js/jquery.js")}}"></script>
         <h1 align="center">Registrate ahora para realizar tus tramites en lìnea</h1>
          <br>
         <br> 
@@ -19,23 +19,23 @@
 
 
                     
-<form  align ="center" action="" method="POST" class="col-xs-4 col-md-offset-4">
-    <input type="hidden" name="">
+<form  align ="center" action="{{url('/principal')}}" method="POST" class="col-xs-4 col-md-offset-4">
+    <input type="hidden" name="_token" value="{{csrf_token()}}">
 
 <div class="form-group">
-<label for="nombre">Usuario </label>
+<label for="usuario">Usuario </label>
 <input value="" type="text" class="form-control" name="usuario"> 
 </div>
 
 <div class="form-group">
-<label for="edad">Contraseña</label>
+<label for="contraseña">Contraseña</label>
 <input value="" type="password" class="form-control" name="contraseña"> 
 </div>
 
 <input type="submit" class="btn btn-primary">
 <br>
 <br>
-<a href="{{url('usuarios')}}" >No tienes cuenta? Crea Una </a>
+<a href="" >No tienes cuenta? Crea Una </a>
 
 </form>
 
