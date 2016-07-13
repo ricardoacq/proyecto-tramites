@@ -10,28 +10,38 @@
 		<label for="">Nombre:</label>
 		<input type="text" class="form-control" name="nombre">
 	</div>
+	<hr>
 	<div class="form-group">
-		<label for="">Fecha de nacimiento</label><br>
+		<h4>Fecha de nacimiento</h4>
 		<label for"">Día</label>
-		<input type="text" name="dia" value="">
+		<input type="text" class="form-control" name="dia" value="">
 		<label for"">Mes</label>
-		<input type="text" name="mes" value="">
+		<input type="text" class="form-control" name="mes" value="">
 		<label for="">Año</label>
-		<input type="text" name="año" value="">
+		<input type="text" class="form-control" name="año" value="">
 	</div>
+	<hr>
 	<div class="form-group">
-		<label for="">Lugar para recoger el documento</label><br>
-		<label for="">Unidad de Servicios Estatales</label>
-		<input type="checkbox" name="seleccion" value="">
-		<label for="">Ayuntamiento</label>
-		<input type="checkbox" name="seleccion" value="">
+		<h4>Lugar para recoger el documento</h4>
+		<div class="radio">
+  			<label>
+    			<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+   				 Unidad de Servicios Estatales
+  			</label>
+		</div>
+		<div class="radio">
+		 	<label>
+		    	<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		    	Ayuntamiento
+			</label>
+		</div>
 
 	</div>
-	<div class="form-group">
-		<label>Elija una fecha para recoger su acta</label>
+	<hr>
+	<div class="col-xs-12 text-center well">
+		<input type="submit" class="btn btn-primary">
+		<a href="#" class="btn btn-danger">Cancelar</a>
 	</div>
-	<input type="submit" class="btn btn-primary">
-	<a href="#" class="btn btn-danger">Cancelar</a>
 </form>
 
 @stop
