@@ -18,3 +18,5 @@ Route::post('/principal','ejemplocontroller@master');
 
 Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
 
+Route::get('/licencia', function (){return view('licencia');});
+
