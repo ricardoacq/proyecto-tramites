@@ -7,7 +7,10 @@ use App\Http\Requests;
 
 class ejemplocontroller extends Controller
 {
-  //muestra listas
-  
+  public function master(Request $Request){
+  	$usuario=$Request->input('usuario');
+
+  	return view('/master',compact('usuario'));
+  }
 
 }
