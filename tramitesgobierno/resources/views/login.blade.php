@@ -10,7 +10,7 @@
         <br> 
 <body>
     
-        <div align="center"><img src="gobierno.jpg" width="300" height="220" ></div>
+        <div align="center"><img src="{{asset('img/gobierno.jpg')}}" width="300" height="220" ></div>
         <br>
         <br>
         <br>
