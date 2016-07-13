@@ -23,11 +23,13 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="{{url('principal')}}">Inicio</a>
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+
         <li ><a href="{{url('/tramitarActaNac')}}">Acta de Nacimiento</a></li>
         <li ><a href="#">Renovar Licencia </a></li>
         <li><a href="#">Becas </a></li>
@@ -39,7 +41,9 @@
      
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{$usuario}} <span class="caret"></span></a>
+
           <ul class="dropdown-menu">
             <li><a href="#">Perfil</a></li>
             <li><a href="#">Editar</a></li>
@@ -57,7 +61,9 @@
     <div class="col-xs-12 text-center well">
        @yield('encabezado') 
          </div>
+
         </div>  
+
          <div class="row">
         <div class="col-xs-12">
        @yield('contenido')

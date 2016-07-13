@@ -12,7 +12,9 @@
 */
 
 //HOME
-Route::get('/', function (){return view('principal');});
+Route::get('/', function (){return view('login');});
 
+Route::post('/principal','ejemplocontroller@master');
 
+Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
 
