@@ -5,9 +5,7 @@
       <title></title>
        <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
       <script src="{{asset("js/jquery.js")}}"> </script>     
-
   </head>
-
   <body>
     
 <nav class="navbar navbar-default">
@@ -29,7 +27,7 @@
       <ul class="nav navbar-nav">
 
         <li ><a href="{{url('/tramitarActaNac')}}">Acta de Nacimiento</a></li>
-        <li ><a href="#">Renovar Licencia </a></li>
+        <li ><a href="{{url('/licencia')}}">Renovar Licencia </a></li>
         <li><a href="#">Becas </a></li>
         <li><a href="#">Visa</a></li>
         <li class="dropdown">
@@ -73,7 +71,7 @@
  <div class="row">
   <div class="cik-xs-12 text-center">
     <hr>
-    <font color="red"> Gobierno del estado </font>
+    <font color="red"> Gobierno del estado 8==D</font>
   </div>
  </div>
  <script src="{{asset("js/bootstrap.js")}}"></script>
