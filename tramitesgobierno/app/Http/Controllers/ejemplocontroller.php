@@ -14,18 +14,21 @@ class ejemplocontroller extends Controller
   	return view('/principal',compact('usuario'));
   }
 
-  public function enviarActa(Requests $Requests){
+  public function enviarActa(Request $Request){
   	$acta = new Acta();
 
   	$acta->curp = $Request->input('curp');
-  	$acta->nombre = $Request->input('nombre')
+  	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
-  	$acta->fechanacimiento = $Request->input('dia','-','mes','-', 'año');
-
+  	$anio = $Request->input('ano');
+  	$mes = $Request->input('mes');
+    $dia = $Request->input('dia');
+    $fecha="$anio-$mes-$dia 00:00:00";
+  	$acta->fechanacimiento = $fecha;
   	$acta->save();
 
-  	return redirect('/principal');
+  	return redirect('/tramitarActaNac');
   }
 
 }

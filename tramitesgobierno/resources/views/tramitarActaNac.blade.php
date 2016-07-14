@@ -4,7 +4,7 @@
 @stop
 
 @section('contenido')
-<form action="{{url('enviarActa')}}" method="POST">
+<form action="{{url('/enviarActa')}}" method="POST">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<h4>CURP del solicitante</h4>
@@ -29,7 +29,7 @@
 		<label for"">Mes</label>
 		<input type="text" class="form-control" name="mes" value="" maxlength="2">
 		<label for="">Año</label>
-		<input type="text" class="form-control" name="año" value="" maxlength="4">
+		<input type="text" class="form-control" name="ano" value="" maxlength="4">
 	</div>
 	<hr>
 	<div class="form-group">
