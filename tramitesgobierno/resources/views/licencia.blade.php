@@ -8,7 +8,7 @@
 
 <div class="form-group">
 		<label for="">Acta de nacimiento</label><br>
-		<input name="acta" type="file" />
+		<input name="acta" type="file" class="form-control"/>
 		<br>
 		<br>
 		<label for"">Comprobante de Domicilio</label>
