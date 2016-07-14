@@ -37,8 +37,7 @@ $(document).ready(function(){
 	});
 });
 </script>
-
-<form action="{{url('enviarActa')}}" method="POST">
+<form action="{{url('/enviarActa')}}" method="POST">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<h4>CURP del solicitante</h4>
