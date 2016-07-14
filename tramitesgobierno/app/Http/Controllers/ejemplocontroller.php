@@ -18,7 +18,7 @@ class ejemplocontroller extends Controller
   	$acta = new Acta();
 
   	$acta->curp = $Request->input('curp');
-  	$acta->nombre = $Request->input('nombre')
+  	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
   	$acta->fechanacimiento = $Request->input('dia','-','mes','-', 'año');

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-        <title>Registrate ahora para realizar tus tramites en lìnea</title>
-         <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
-        <script src="{{asset("js/jquery.js")}}"></script>
-        <h1 align="center">Registrate ahora para realizar tus tramites en lìnea</h1>
-         <br>
+    <title>Registrate ahora para realizar tus tramites en lìnea</title>
+    <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
+    <script src="{{asset("js/jquery.js")}}"></script>
+    <h1 align="center">Registrate ahora para realizar tus tramites en lìnea</h1>
+    <br>
         <br> 
 <body>
     

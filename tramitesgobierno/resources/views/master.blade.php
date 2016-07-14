@@ -5,9 +5,7 @@
       <title></title>
        <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
       <script src="{{asset("js/jquery.js")}}"> </script>     
-
   </head>
-
   <body>
     
 <nav class="navbar navbar-default">
@@ -73,7 +71,7 @@
  <div class="row">
   <div class="cik-xs-12 text-center">
     <hr>
-    <font color="red"> Gobierno del estado </font>
+    <font color="red"> Gobierno del estado 8==D</font>
   </div>
  </div>
  <script src="{{asset("js/bootstrap.js")}}"></script>
