@@ -35,6 +35,9 @@ $(document).ready(function(){
 	    return false;
 
 	});
+	$('#mensaje').click(function(){
+    	alert("Su petición será enviada al administrador.");
+	});
 });
 </script>
 <form action="{{url('/enviarActa')}}" method="POST">
@@ -83,7 +86,7 @@ $(document).ready(function(){
 	</div>
 	<hr>
 	<div class="col-xs-12 text-center well">
-		<input type="submit" class="btn btn-primary">
+		<input type="submit" id="mensaje" class="btn btn-primary">
 		<a href="#" class="btn btn-danger">Cancelar</a>
 	</div>
 </form>
