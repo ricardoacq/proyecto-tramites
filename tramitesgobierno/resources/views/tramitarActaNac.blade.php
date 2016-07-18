@@ -84,10 +84,9 @@ $(document).ready(function(){
 		</div>
 
 	</div>
-	<hr>
-	<div class="col-xs-12 text-center well">
+	<div class="text-center">
 		<input type="submit" id="mensaje" class="btn btn-primary">
-		<a href="#" class="btn btn-danger">Cancelar</a>
+		<a href="{{url('/principal')}}" class="btn btn-danger">Cancelar</a>
 	</div>
 </form>
 

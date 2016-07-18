@@ -18,9 +18,16 @@ Route::post('/principal','ejemplocontroller@master');
 Route::get('/principal', function (){return view('/principal');});
 
 Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
+Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
+
 
 Route::get('/licencia', function (){return view('licencia');});
 
-Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
+Route::get('/visa', function(){return view('/visa');});
+
+Route::get('/becas', 'ejemplocontroller@becas');
 
 Route::get('/perfil', function (){return view('perfil');});
+
+
+
