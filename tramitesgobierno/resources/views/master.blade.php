@@ -71,7 +71,7 @@
  <div class="row">
   <div class="cik-xs-12 text-center">
     <hr>
-    <font color="red"> Gobierno del estado 8==D</font>
+    <font color="red"> Gobierno del estado</font>
   </div>
  </div>
  <script src="{{asset("js/bootstrap.js")}}"></script>
