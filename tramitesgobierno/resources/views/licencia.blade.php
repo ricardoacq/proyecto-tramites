@@ -2,36 +2,27 @@
 @section('encabezado')
 <h1>Renovar Licencia para conducir</h1>
 @stop
-
 @section('contenido')
-
-
-<div class="form-group">
-		<label for="">Acta de nacimiento</label><br>
-		<input name="acta" type="file" class="form-control"/>
-
-		<br>
-		<br>
+<form action="#" method="POST">
+	<div class="form-group">
+		<label for="">Acta de nacimiento</label>
+		<input name="acta" type="file" class="form-control">
+		<hr>
 		<label for"">Comprobante de Domicilio</label>
-		<input name="comprobante" type="file" />
-		<br>
-		<br>
+		<input name="comprobante" type="file" class="form-control">
+		<hr>
 		<label for"">INE</label>
-		<input name="ine" type="file" />
-		<br>
-		<br>
+		<input name="ine" type="file" class="form-control"/>
+		<hr>
 		<label for="">Licencia Anterior o constancia de no infraccion.</label>
-		<input name="licencia" type="file" />
-		<br>
-		<br>
-		<input type="submit" class="btn btn-primary" value="Confirmar Solicitud">
+		<input name="licencia" type="file" class="form-control">
 	</div>
-<br>
-		<br>
-<h5>Nota: Los archivos deben de ser subidos con imagen clara para su correcta verificacion.</h5>
-
-
-
-
-
+	<div class="col-xs-12 well">
+		<label>*Los archivos deben de ser subidos con imagen clara para su correcta verificacion.</label>
+	</div>
+	<div class="text-center">
+		<input type="submit" class="btn btn-primary">
+		<a href="{{url('/principal')}}" class="btn btn-danger">Cancelar</a>
+	</div>
+</form>
 @stop
