@@ -23,3 +23,9 @@ Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
 Route::get('/licencia', function (){return view('licencia');});
 
 Route::get('/visa', function(){return view('/visa');});
+
+Route::get('/becas', 'ejemplocontroller@becas');
+Route::get('/perfil', function (){return view('perfil');});
+
+
+
