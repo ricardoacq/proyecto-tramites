@@ -7,6 +7,28 @@
 
 
 <div class="form-group">
+		<label for="">Beca:</label>		
+		<select class ="form-control" name="beca">
+			<option value="">Becas.</option>
+		</select>	
+		<br>
+		<br>
+		<label for="">Nombre(s):</label>
+		<input type="text" class="form-control" name="nombre" maxlength="18" value="">
+		<br>
+		<br>
+		<label for="">Apellido Paterno:</label>
+		<input type="text" class="form-control" name="apellidoP" maxlength="18" value="">
+		<br>
+		<br>
+		<label for="">Apellido Materno:</label>
+		<input type="text" class="form-control" name="apellidoM" maxlength="18" value="">
+		<br>
+		<br>
+		<label for="">CURP:</label>
+		<input type="text" class="form-control" name="curp" maxlength="18" value="">
+		<br>
+		<br>
 		<label for="">Acta de nacimiento</label>
 		<input name="acta" type="file" />
 		<br>
