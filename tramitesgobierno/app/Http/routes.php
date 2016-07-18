@@ -22,3 +22,5 @@ Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
 Route::get('/licencia', function (){return view('licencia');});
 
 Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
+
+Route::get('/becas', 'ejemplocontroller@becas');

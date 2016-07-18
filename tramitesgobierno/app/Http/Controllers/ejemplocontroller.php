@@ -30,5 +30,8 @@ class ejemplocontroller extends Controller
 
   	return redirect('/tramitarActaNac');
   }
+  public function becas(){
+    return view('becas');
+  }
 
 }

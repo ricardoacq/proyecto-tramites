@@ -28,7 +28,7 @@
 
         <li ><a href="{{url('/tramitarActaNac')}}">Acta de Nacimiento</a></li>
         <li ><a href="{{url('/licencia')}}">Renovar Licencia </a></li>
-        <li><a href="#">Becas </a></li>
+        <li><a href="{{url('/becas')}}">Becas </a></li>
         <li><a href="#">Visa</a></li>
         <li class="dropdown">
           
