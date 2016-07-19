@@ -19,7 +19,7 @@ class ejemplocontroller extends Controller
   public function enviarActa(Request $Request){
   	$acta = new Acta();
 
-  	$acta->curp = $Request->input('curp');
+  	$acta->id = $Request->input('curp');
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
