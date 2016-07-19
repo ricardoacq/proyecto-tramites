@@ -43,6 +43,8 @@
           <ul class="dropdown-menu">
             <li><a href="{{url('/perfil')}}">Perfil</a></li>
             <li><a href="#">Editar</a></li>
+
+
             <li role="separator" class="divider"></li>
             <li><a href="#">Cerrar sesion</a></li>
           </ul>
