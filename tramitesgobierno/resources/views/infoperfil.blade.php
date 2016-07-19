@@ -1,14 +1,6 @@
-@extends('master')
-@section('encabezado')
-<h1>Perfil de Usuario</h1>
-@stop
-
-@section('contenido')
-
- 
+@extends('mostrarperfil')
+@section('info') 
 <form action="" method="POST" class="col-xs-8">
-
-
 		<label for="">Nombre:</label>
 		<input type="text" class="form-control" name="nombre" maxlength="18" value="">
 
@@ -27,14 +19,5 @@
 			<label for="">Codigo Postal:</label>
 		<input type="text" class="form-control" name="cp" maxlength="18" value="">
 		<br>
-
-		
-<input type="submit" class="btn btn-primary" value="Guardar Cambios">
-
-</form>
-
-
-
-
-
+	</form>
 @stop

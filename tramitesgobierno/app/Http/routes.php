@@ -29,5 +29,8 @@ Route::get('/becas', 'ejemplocontroller@becas');
 
 Route::get('/perfil', function (){return view('perfil');});
 
+Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
+Route::get('/infoperfil', function (){return view('infoperfil');});
+
 
 
