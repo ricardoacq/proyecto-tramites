@@ -5,9 +5,9 @@
 
 @section('contenido')
 
-
-<form action="{{url('actualizarusuario')}}/{{$usuario->id}}" method="POST">
+<form action="{{url('actualizarusuario')}}/{{$usuario->id}}" method="POST" class="col-xs-8">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
+
 
 		
 		<label for="">Nombre(s):</label>
