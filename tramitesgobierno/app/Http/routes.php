@@ -27,7 +27,7 @@ Route::get('/visa', function(){return view('/visa');});
 
 Route::get('/becas', 'ejemplocontroller@becas');
 
-Route::get('/perfil', function (){return view('perfil');});
-
+Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
+Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
 
 

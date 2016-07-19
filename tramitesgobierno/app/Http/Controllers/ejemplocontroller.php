@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Acta;
+use App\usuario;
+use DB;
 
 class ejemplocontroller extends Controller
 {
@@ -32,6 +34,22 @@ class ejemplocontroller extends Controller
   }
   public function becas(){
     return view('becas');
+  }
+
+  public function perfil($id){
+     $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
+     return view('perfil',compact('usuario'));
+  }
+  public function actualizarusuario(Request $Request,$id){
+    $usuario = usuario::find($id);
+    $usuario->nombre = $Request->input('nombre');
+    $usuario->apellidop = $Request->input('apellidoP');
+    $usuario->apellidom = $Request->input('apellidoM');
+    $usuario->sexo = $Request->input('sexo');
+    $usuario->estado = $Request->input('estado');
+    $usuario->save();
+
+    return redirect('/principal');
   }
 
 }

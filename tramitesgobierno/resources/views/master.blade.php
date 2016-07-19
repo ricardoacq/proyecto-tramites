@@ -42,7 +42,10 @@
 
           <ul class="dropdown-menu">
             <li><a href="#">Perfil</a></li>
-            <li><a href="{{url('/perfil')}}">Editar</a></li>
+            
+            <li><a href="{{url('/perfil')}}/{{'HEMJ930302HJCRNL07'}}">Editar</a>
+              <input type="hidden" name="_token" value="{{csrf_token()}}">
+            </li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Cerrar sesion</a></li>
           </ul>
