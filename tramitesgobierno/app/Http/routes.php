@@ -27,8 +27,12 @@ Route::get('/visa', function(){return view('/visa');});
 
 Route::get('/becas', 'ejemplocontroller@becas');
 
-Route::get('/perfil', function (){return view('perfil');});
-
 Route::post('guardarVisa', 'ejemplocontroller@guardarVisa');
+
+Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
+Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
+
+Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
+Route::get('/infoperfil', function (){return view('infoperfil');});
 
 

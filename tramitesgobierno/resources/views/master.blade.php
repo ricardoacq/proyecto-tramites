@@ -41,8 +41,10 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario<span class="caret"></span></a>
 
           <ul class="dropdown-menu">
-            <li><a href="#">Perfil</a></li>
-            <li><a href="{{url('/perfil')}}">Editar</a></li>
+
+            <li><a href="{{url('/mostrarperfil')}}">Perfil</a></li>
+            <li><a href="{{url('/perfil')}}/{{'HEMJ930302HJCRNL07'}}">Editar</a></li>
+
             <li role="separator" class="divider"></li>
             <li><a href="#">Cerrar sesion</a></li>
           </ul>
