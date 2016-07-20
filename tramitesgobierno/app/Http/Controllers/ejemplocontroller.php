@@ -10,6 +10,11 @@ use DB;
 
 class ejemplocontroller extends Controller
 {
+
+  public function store(){
+      flash('Welcome Aboard!');
+      return home();
+  }
   public function master(Request $Request){
   	$usuario=$Request->input('usuario');
 
@@ -49,6 +54,27 @@ class ejemplocontroller extends Controller
     $usuario->sexo = $Request->input('sexo');
     $usuario->estado = $Request->input('estado');
     $usuario->save();
+
+    return redirect('/principal');
+  }
+
+  public function guardarVisa(Request $Request){
+    //Se obtiene el campo definido en el formulario
+    $archivo1 = $Request->file('solicitud');
+    $archivo2 = $Request->file('pasaporte');
+    $archivo3 = $Request->file('foto');
+    $archivo4 = $Request->file('estancia');
+    //Se saca el nombre del archivo
+    $nombre1 = $archivo1->getClientOriginalName();
+    $nombre2 = $archivo2->getClientOriginalName();
+    $nombre3 = $archivo3->getClientOriginalName();
+    $nombre4 = $archivo4->getClientOriginalName();
+    //Indicar que se va a guardar un archivo en el disco local
+    \Storage::disk('local')->put($nombre1, \File::get($archivo1));
+    \Storage::disk('local')->put($nombre2, \File::get($archivo2));
+    \Storage::disk('local')->put($nombre3, \File::get($archivo3));
+    \Storage::disk('local')->put($nombre4, \File::get($archivo4));
+    //Volvemos al inicio tras haber completado la solicitud
 
     return redirect('/principal');
   }
