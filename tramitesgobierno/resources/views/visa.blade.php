@@ -3,7 +3,8 @@
 <h1>VISA</h1>
 @stop
 @section('contenido')
-<form action="#" method="POST">
+<form action="{{url('/guardarVisa')}}" method="POST">
+	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<label for="">Formato de solicitud de VISA</label><br>
 		<a href="https://drive.google.com/file/d/0ByzIMoBRTFBua1FxaXdoWG50QVU/view" target="_blank">Descargar formato de VISA aqui.</a>
@@ -11,11 +12,11 @@
 		<hr>
 
 		<label for="">Pasaporte vigente</label>
-		<input name="pasaporte" type="file" class="form-control" required>
+		<input name="pasaporte" type="file" class="form-control">
 		<hr>
 
 		<label for="">Fotografia reciente (no mayor a 6 meses)</label>
-		<input name="foto" type="file" class="form-control" required>
+		<input name="foto" type="file" class="form-control">
 		<hr>
 
 		<label for="">*Documento de estancia legal</label>

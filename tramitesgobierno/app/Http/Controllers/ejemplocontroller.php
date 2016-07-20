@@ -34,4 +34,6 @@ class ejemplocontroller extends Controller
     return view('becas');
   }
 
+        
+
 }

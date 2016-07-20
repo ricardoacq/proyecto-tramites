@@ -29,5 +29,6 @@ Route::get('/becas', 'ejemplocontroller@becas');
 
 Route::get('/perfil', function (){return view('perfil');});
 
+Route::post('guardarVisa', 'ejemplocontroller@guardarVisa');
 
 
