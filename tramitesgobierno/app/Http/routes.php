@@ -34,5 +34,6 @@ Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
 
 Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
 Route::get('/infoperfil', function (){return view('infoperfil');});
-
+Route::get('/notificaciones', function (){return view('notificaciones');});
+Route::get('/registrarusuario', function (){return view('registrarusuario	');});
 
