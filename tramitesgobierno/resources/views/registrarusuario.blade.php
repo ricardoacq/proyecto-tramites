@@ -1,12 +1,24 @@
-@extends('master')
-@section('encabezado')
-<h1>Registrate</h1>
-<p>Registrate ahora y empieza a hacer tus tramites en linea.</p>
-@stop
+<!DOCTYPE html>
+ <html lan="en">
+    <head>
+      <meta charset="UTF-8">
+      <title></title>
+       <link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
+      <script src="{{asset("js/jquery.js")}}"> </script>     
+  </head>
+  <body>
 
-@section('contenido')
+<div class="container">
+   <div class="row">
+    <div class="col-xs-12 text-center well">
+    	<h1>Registrar Usuario</h1>
+         </div>
 
-<script>
+        </div>  
+
+         <div class="row">
+        <div class="col-xs-12">
+      <script>
 $(document).ready(function(){
 	$("#name, #lastname1, #lastname2").keypress(function (key) {
 		window.console.log(key.charCode)
@@ -94,13 +106,11 @@ $(document).ready(function(){
 	<div class="text-center">
 		<a href="{{url('/principal')}}" class="btn btn-primary">Registrar</a>
 	</div>
+	<br>
 </form>
+     </div>
+    </div>
+</div>
 
-
-
-
-
-
-
-
-@stop
+	</body>
+</html>	

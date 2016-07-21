@@ -29,7 +29,7 @@
             <input type="submit" class="btn btn-primary">
             <br>
             <br>
-            <a href="#" >¿No tienes cuenta? Crea Una</a>
+            <a href="{{url('/registrarusuario')}}" >¿No tienes cuenta? Crea Una</a>
         </form>
     </body>
 </html>
