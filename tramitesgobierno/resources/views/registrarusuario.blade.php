@@ -97,6 +97,8 @@ $(document).ready(function(){
 	</div>
 <div class="form-group">
 		<h4>Domicilio</h4>
+		<label for"">Correo electrónico:</label>
+		<input type="text" class="form-control" id="correo" name="correo" value="">
 		<label for"">Calle:</label>
 		<input type="text" class="form-control" id="calle" name="calle" value="">
 		<label for"">Numero:</label>

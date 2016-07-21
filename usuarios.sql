@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-07-2016 a las 19:35:21
+-- Tiempo de generación: 21-07-2016 a las 20:13:29
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -32,6 +32,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(50) NOT NULL,
   `apellidop` varchar(50) NOT NULL,
   `apellidom` varchar(50) NOT NULL,
+  `correo` varchar(50) NOT NULL,
   `fechanac` datetime NOT NULL,
   `sexo` varchar(1) NOT NULL,
   `calle` varchar(50) NOT NULL,
@@ -47,10 +48,10 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `contraseña`, `nombre`, `apellidop`, `apellidom`, `fechanac`, `sexo`, `calle`, `numerocasa`, `colonia`, `cp`, `tipo`, `created_at`, `updated_at`) VALUES
-('5hg6f7d8gii338rfm49', '12345', 'Juan', 'Lopez', 'Rodriguez', '1970-02-01 00:00:00', 'M', '', '', '', 0, 'Usuario', '2016-07-14 16:49:18', '0000-00-00 00:00:00'),
-('HEMJ930302HJCRNL07', '12345', 'Julio Francisco', 'Hernández', 'Manjarrez', '1993-03-02 00:00:00', 'M', '', '', '', 0, 'Administrador', '2016-07-19 20:35:43', '2016-07-20 02:35:43'),
-('HEMJ939203HJCRNL08', '12345', 'Julio Negro', 'Con', 'Dedos', '1993-02-03 00:00:00', 'M', 'Calle', '1254', 'Babilonia', 80120, NULL, '2016-07-21 23:32:12', '2016-07-21 23:32:12');
+INSERT INTO `usuarios` (`id`, `contraseña`, `nombre`, `apellidop`, `apellidom`, `correo`, `fechanac`, `sexo`, `calle`, `numerocasa`, `colonia`, `cp`, `tipo`, `created_at`, `updated_at`) VALUES
+('5hg6f7d8gii338rfm49', '12345', 'Juan', 'Lopez', 'Rodriguez', '', '1970-02-01 00:00:00', 'M', '', '', '', 0, 'Usuario', '2016-07-14 16:49:18', '0000-00-00 00:00:00'),
+('HEMJ930302HJCRNL07', '12345', 'Julio Francisco', 'Hernández', 'Manjarrez', '', '1993-03-02 00:00:00', '', 'Cerro de Efrain', '3212', 'Buenos Aires', 80112, 'Administrador', '2016-07-21 18:12:53', '2016-07-22 00:12:53'),
+('HEMJ939203HJCRNL08', '12345', 'Julio Negro', 'Con', 'Dedos', 'julionegro@tucola', '1993-02-03 00:00:00', 'M', 'Calle', '1254', 'Babilonia', 80120, NULL, '2016-07-21 18:08:04', '2016-07-21 23:32:12');
 
 --
 -- Índices para tablas volcadas

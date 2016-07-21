@@ -47,6 +47,11 @@ class ejemplocontroller extends Controller
      $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
      return view('perfil',compact('usuario'));
   }
+
+  public function infoperfil($id){
+     $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
+     return view('infoperfil',compact('usuario'));
+  }
   public function actualizarusuario(Request $Request,$id){
     $usuario = usuario::find($id);
     $usuario->nombre = $Request->input('nombre');
@@ -117,6 +122,7 @@ class ejemplocontroller extends Controller
     $dia = $Request->input('dia');
     $usuario->fechanac = "$año-$mes-$dia 00:00:00";
     $usuario->sexo = $Request->input('radios');
+    $usuario->correo = $Request->input('correo');
     $usuario->calle = $Request->input('calle');
     $usuario->numerocasa = $Request->input('numero');
     $usuario->colonia = $Request->input('colonia');
