@@ -19,11 +19,17 @@
 			<label for="">Apellido Materno:</label>
 		<input type="text" class="form-control" name="apellidoM" maxlength="18" value="{{$usuario->apellidom}}">
 
-			<label for="">Sexo (M/F):</label>
-		<input type="text" class="form-control" name="sexo" maxlength="18" value="{{$usuario->sexo}}">
+			<label for="">Calle:</label>
+		<input type="text" class="form-control" name="calle" maxlength="18" value="{{$usuario->calle}}">
+		
+			<label for="">Número de casa:</label>
+		<input type="text" class="form-control" name="ncasa" maxlength="18" value="{{$usuario->numerocasa}}">
+		
+			<label for="">Colonia:</label>
+		<input type="text" class="form-control" name="colonia" maxlength="18" value="{{$usuario->colonia}}">
 
-			<label for="">Localidad:</label>
-		<input type="text" class="form-control" name="estado" maxlength="18" value="{{$usuario->estado}}">
+			<label for="">Código Postal:</label>
+		<input type="text" class="form-control" name="cp" maxlength="18" value="{{$usuario->cp}}">
 		<br>
 
 		

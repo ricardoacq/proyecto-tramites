@@ -53,7 +53,10 @@ class ejemplocontroller extends Controller
     $usuario->apellidop = $Request->input('apellidoP');
     $usuario->apellidom = $Request->input('apellidoM');
     $usuario->sexo = $Request->input('sexo');
-    $usuario->estado = $Request->input('estado');
+    $usuario->calle = $Request->input('calle');
+    $usuario->numerocasa = $Request->input('ncasa');
+    $usuario->colonia = $Request->input('colonia');
+    $usuario->cp = $Request->input('cp');
     $usuario->save();
 
     return redirect('/principal');
@@ -102,5 +105,26 @@ class ejemplocontroller extends Controller
 
     return redirect('/principal');
   }
+   public function guardarusuario(Request $Request){
+    $usuario = new usuario();
+    $usuario->id = $Request->input('curp');
+    $usuario->contraseña = $Request->input('contra1');
+    $usuario->nombre = $Request->input('nombre');
+    $usuario->apellidop = $Request->input('apellidoPaterno');
+    $usuario->apellidom = $Request->input('apellidoMaterno');
+    $año = $Request->input('año');
+    $mes = $Request->input('mes');
+    $dia = $Request->input('dia');
+    $usuario->fechanac = "$año-$mes-$dia 00:00:00";
+    $usuario->sexo = $Request->input('radios');
+    $usuario->calle = $Request->input('calle');
+    $usuario->numerocasa = $Request->input('numero');
+    $usuario->colonia = $Request->input('colonia');
+    $usuario->cp = $Request->input('cp');
+    $usuario->save();
+
+    return redirect('/principal');
+  }
+
 
 }

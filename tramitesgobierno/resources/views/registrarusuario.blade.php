@@ -51,12 +51,16 @@ $(document).ready(function(){
 });
 </script>
 
-<form action="{{url('/')}}" method="POST">
+<form action="{{url('/guardarusuario')}}" method="POST">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<h4>Ingresa tus datos</h4>
 		<label for="">CURP:</label>
 		<input type="text" class="form-control" name="curp" maxlength="18" placeholder="Escriba su CURP">
+		<label for="">Contraseña:</label>
+		<input type="password" class="form-control" name="contra1" maxlength="50" placeholder="Escriba su contraseña">
+		<label for="">Confirmar Contraseña:</label>
+		<input type="password" class="form-control" name="contra2" maxlength="50" placeholder="Confirme su contraseña">
 	</div>
 	<hr>
 	<div class="form-group">
@@ -83,28 +87,29 @@ $(document).ready(function(){
 		<h4>Sexo</h4>
 		<div class="radio">
   			<label>
-    			<input type="radio" name="radios" id="optionsRadios1" value="option1" checked> Hombre</label>
+    			<input type="radio" name="radios" id="optionsRadios1" value="M" checked> Hombre</label>
 		</div>
 		<div class="radio">
 		 	<label>
-		    	<input type="radio" name="radios" id="optionsRadios2" value="option2">Mujer</label>
+		    	<input type="radio" name="radios" id="optionsRadios2" value="F">Mujer</label>
 		</div>
 
 	</div>
 <div class="form-group">
 		<h4>Domicilio</h4>
 		<label for"">Calle:</label>
-		<input type="text" class="form-control" id="calle" name="dia" value="">
+		<input type="text" class="form-control" id="calle" name="calle" value="">
 		<label for"">Numero:</label>
-		<input type="text" class="form-control" id="numero" name="mes" value="">
+		<input type="text" class="form-control" id="numero" name="numero" value="">
 		<label for="">Colonia:</label>
-		<input type="text" class="form-control" id="colonia" name="año" value="">
+		<input type="text" class="form-control" id="colonia" name="colonia" value="">
 		<label for="">Codigo Postal:</label>
-		<input type="text" class="form-control" id="cp" name="año" value="" maxlength="5">
+		<input type="text" class="form-control" id="cp" name="cp" value="" maxlength="5">
 	</div>
 
 	<div class="text-center">
-		<a href="{{url('/principal')}}" class="btn btn-primary">Registrar</a>
+		<input type="submit" class="btn btn-primary" value="Registrar">
+		
 	</div>
 	<br>
 </form>
