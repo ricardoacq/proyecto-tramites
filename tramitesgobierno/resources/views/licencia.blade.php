@@ -3,7 +3,9 @@
 <h1>Renovar Licencia para conducir</h1>
 @stop
 @section('contenido')
-<form action="#" method="POST">
+
+<form action="{{url('/guardarLicencia')}}" method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<label for="">Acta de nacimiento</label>
 		<input name="acta" type="file" class="form-control">

@@ -26,7 +26,7 @@
 			<label>*Aplica solo a persona extranjera que no es nacional al pais donde solicita la VISA.</label><br>
 		</div>
 		<div class="text-center">
-			<input type="submit" id="mensaje" class="btn btn-primary">
+			<input type="submit" class="btn btn-primary">
 			<a href="{{url('/principal')}}" class="btn btn-danger">Cancelar</a>
 		</div>
 	</div>

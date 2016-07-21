@@ -28,6 +28,7 @@ Route::get('/visa', function(){return view('/visa');});
 Route::get('/becas', 'ejemplocontroller@becas');
 
 Route::post('/guardarVisa', 'ejemplocontroller@guardarVisa');
+Route::post('/guardarLicencia', 'ejemplocontroller@guardarLicencia');
 
 Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
 Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');

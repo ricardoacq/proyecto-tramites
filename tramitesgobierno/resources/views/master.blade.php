@@ -46,7 +46,7 @@
             <li><a href="{{url('/perfil')}}/{{'HEMJ930302HJCRNL07'}}">Editar</a></li>
 
             <li role="separator" class="divider"></li>
-            <li><a href="#">Cerrar sesion</a></li>
+            <li><a href="{{url('/')}}">Cerrar sesion</a></li>
           </ul>
         </li>
       </ul>

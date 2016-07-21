@@ -45,7 +45,17 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => public_path('archivos'),
+            'root' => public_path('licencias'),
+        ],
+
+        'visas' => [
+            'driver' => 'local',
+            'root' => public_path('visas'),
+        ],
+
+        'beca' => [
+            'driver' => 'local',
+            'root' => public_path('beca'),
         ],
 
         'public' => [

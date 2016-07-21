@@ -15,6 +15,7 @@ class ejemplocontroller extends Controller
       flash('Welcome Aboard!');
       return home();
   }
+  
   public function master(Request $Request){
   	$usuario=$Request->input('usuario');
 
@@ -70,6 +71,29 @@ class ejemplocontroller extends Controller
     $nombre3 = $archivo3->getClientOriginalName();
     $nombre4 = $archivo4->getClientOriginalName();
     //Indicar que se va a guardar un archivo en el disco local
+    \Storage::disk('visas')->put($nombre1, \File::get($archivo1));
+    \Storage::disk('visas')->put($nombre2, \File::get($archivo2));
+    \Storage::disk('visas')->put($nombre3, \File::get($archivo3));
+    \Storage::disk('visas')->put($nombre4, \File::get($archivo4));
+    //Volvemos al inicio tras haber completado la solicitud
+
+    return redirect('/principal');
+  }
+  public function guardarLicencia(Request $Request){
+    //Se obtiene el campo definido en el formulario
+    $archivo1 = $Request->file('acta');
+    $archivo2 = $Request->file('comprobante');
+    $archivo3 = $Request->file('ine');
+    $archivo4 = $Request->file('licencia');
+    //Se saca el nombre del archivo
+    //$nombre='acta$id'
+    //$extension = $archivo.getClientOriginalExtension();
+    $nombre1 = $archivo1->getClientOriginalName();
+    $nombre2 = $archivo2->getClientOriginalName();
+    $nombre3 = $archivo3->getClientOriginalName();
+    $nombre4 = $archivo4->getClientOriginalName();
+    //Indicar que se va a guardar un archivo en el disco local
+    //\Storage::disk('local')->put($nombre.'.'.$extension, \File::get($archivo));
     \Storage::disk('local')->put($nombre1, \File::get($archivo1));
     \Storage::disk('local')->put($nombre2, \File::get($archivo2));
     \Storage::disk('local')->put($nombre3, \File::get($archivo3));
