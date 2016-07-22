@@ -12,7 +12,7 @@ class ejemplocontroller extends Controller
 {
 
   public function store(){
-      flash('Welcome Aboard!');
+      flash('Welcome Aboard!', 'success');
       return home();
   }
   
@@ -84,8 +84,7 @@ class ejemplocontroller extends Controller
     \Storage::disk('visas')->put($nombre3, \File::get($archivo3));
     \Storage::disk('visas')->put($nombre4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
-
-    return redirect('/principal');
+    return redirect('/principal')->with('message', 'Exito');
   }
   public function guardarLicencia(Request $Request){
     //Se obtiene el campo definido en el formulario

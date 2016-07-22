@@ -5,6 +5,11 @@
 @stop
 
 @section('contenido')
+	@if(Session::has('message'))
+		<div class="alert alert-success">
+			{{Session::get('message')}}
+		</div>
+	@endif
 
 	<h4>¿Qué necesito para realizar mis tramites?</h4>
 	<p><strong>Acta de nacimiento:</strong><br>

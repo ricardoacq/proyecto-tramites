@@ -8,7 +8,7 @@
 <div>
 <ul class="nav nav-pills nav-stacked col-xs-2" >
   <li class="active"><a href="#" value="">Yayison</a></li>
-  <li><a href="{{url('/infoperfil')}}/{{'HEMJ939203HJCRNL08'}}">Informacion</a></li>
+  <li><a href="{{url('/infoperfil')}}/{{'HEMJ930302HJCRNL07'}}">Informacion</a></li>
   <li><a href="{{url('/notificaciones')}}">Notificaciones</a></li>
  </div>
   
