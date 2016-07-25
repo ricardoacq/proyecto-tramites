@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Nombre</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
@@ -23,7 +23,45 @@
                                 @endif
                             </div>
                         </div>
+                         <div class="form-group{{ $errors->has('apellidop') ? ' has-error' : '' }}">
+                            <label for="apellidop" class="col-md-4 control-label">Apellido paterno</label>
 
+                            <div class="col-md-6">
+                                <input id="apellidop" type="apellidop" class="form-control" name="apellidop" value="{{ old('apellidop') }}">
+
+                                @if ($errors->has('apellidop'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('apellidop') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('apellidom') ? ' has-error' : '' }}">
+                            <label for="apellidom" class="col-md-4 control-label">Apellido materno</label>
+
+                            <div class="col-md-6">
+                                <input id="apellidom" type="apellidom" class="form-control" name="apellidom" value="{{ old('apellidom') }}">
+
+                                @if ($errors->has('apellidom'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('apellidom') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('curp') ? ' has-error' : '' }}">
+                            <label for="curp" class="col-md-4 control-label">CURP</label>
+
+                            <div class="col-md-6">
+                                <input id="curp" type="curp" class="form-control" name="curp" value="{{ old('curp') }}">
+
+                                @if ($errors->has('curp'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('curp') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

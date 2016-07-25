@@ -8,7 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    bienvenido {{ Auth::user()->name }} {{ Auth::user()->apellidop }} {{ Auth::user()->apellidom }}
+                    <hr>
+                    curp: {{ Auth::user()->curp }}
                 </div>
             </div>
         </div>
