@@ -11,16 +11,16 @@
 
 	<div class="form-group">	
 		<label for="">Nombre(s):</label>
-		<input type="text" class="form-control" name="nombre" maxlength="18" value="{{ Auth::user()->name }}">
+		<input type="text" class="form-control" name="name" maxlength="18" value="{{ Auth::user()->name }}">
 
 		<label for="">Apellido Paterno:</label>
-		<input type="text" class="form-control" name="apellidoP" maxlength="18" value="{{ Auth::user()->apellidop }}" >
+		<input type="text" class="form-control" name="apellidop" maxlength="18" value="{{ Auth::user()->apellidop }}" >
 
 		<label for="">Apellido Materno:</label>
-		<input type="text" class="form-control" name="apellidoM" maxlength="18" value="{{ Auth::user()->apellidom }}">
+		<input type="text" class="form-control" name="apellidom" maxlength="18" value="{{ Auth::user()->apellidom }}">
 
 		<label for="">Correo:</label>
-		<input type="text" class="form-control" name="apellidoM" maxlength="18" value="{{ Auth::user()->email }}">
+		<input type="text" class="form-control" name="email" maxlength="18" value="{{ Auth::user()->email }}">
 	</div>
 		<div class="text-center">
 		<input type="submit" class="btn btn-primary" value="Guardar Cambios">
