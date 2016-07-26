@@ -48,6 +48,11 @@ class ejemplocontroller extends Controller
      return view('perfil',compact('usuario'));
   }
 
+  public function notificaciones(){
+     $solicitudes=usuario::get();
+     return view('notificaciones',compact('solicitudes'));
+  }
+
   public function infoperfil($id){
      $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
      return view('infoperfil',compact('usuario'));
