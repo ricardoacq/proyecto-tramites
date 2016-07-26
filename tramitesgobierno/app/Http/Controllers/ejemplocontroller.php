@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Acta;
 use App\usuario;
+use App\user;
+
 use DB;
 
 class ejemplocontroller extends Controller
@@ -54,19 +56,15 @@ class ejemplocontroller extends Controller
   }
 
   public function infoperfil($id){
-     $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
+     $usuario=DB::table('user')->where('id', '=', $id)->first();
      return view('infoperfil',compact('usuario'));
   }
   public function actualizarusuario(Request $Request,$id){
-    $usuario = usuario::find($id);
-    $usuario->nombre = $Request->input('nombre');
-    $usuario->apellidop = $Request->input('apellidoP');
-    $usuario->apellidom = $Request->input('apellidoM');
-    $usuario->sexo = $Request->input('sexo');
-    $usuario->calle = $Request->input('calle');
-    $usuario->numerocasa = $Request->input('ncasa');
-    $usuario->colonia = $Request->input('colonia');
-    $usuario->cp = $Request->input('cp');
+    $usuario = user::find($id);
+    $usuario->name = $Request->input('name');
+    $usuario->apellidop = $Request->input('apellidop');
+    $usuario->apellidom = $Request->input('apellidom');
+    $usuario->email = $Request->input('email');
     $usuario->save();
 
     return redirect('/principal');
@@ -111,27 +109,6 @@ class ejemplocontroller extends Controller
     \Storage::disk('local')->put($nombre3, \File::get($archivo3));
     \Storage::disk('local')->put($nombre4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
-
-    return redirect('/principal');
-  }
-   public function guardarusuario(Request $Request){
-    $usuario = new usuario();
-    $usuario->id = $Request->input('curp');
-    $usuario->contraseña = $Request->input('contra1');
-    $usuario->nombre = $Request->input('nombre');
-    $usuario->apellidop = $Request->input('apellidoPaterno');
-    $usuario->apellidom = $Request->input('apellidoMaterno');
-    $año = $Request->input('año');
-    $mes = $Request->input('mes');
-    $dia = $Request->input('dia');
-    $usuario->fechanac = "$año-$mes-$dia 00:00:00";
-    $usuario->sexo = $Request->input('radios');
-    $usuario->correo = $Request->input('correo');
-    $usuario->calle = $Request->input('calle');
-    $usuario->numerocasa = $Request->input('numero');
-    $usuario->colonia = $Request->input('colonia');
-    $usuario->cp = $Request->input('cp');
-    $usuario->save();
 
     return redirect('/principal');
   }
