@@ -27,7 +27,7 @@
 		</div>
 		<div class="text-center">
 			<input type="submit" class="btn btn-primary">
-			<a href="{{url('/principal')}}" class="btn btn-danger">Cancelar</a>
+			<a href="{{url('/home')}}" class="btn btn-danger">Cancelar</a>
 		</div>
 	</div>
 </form>

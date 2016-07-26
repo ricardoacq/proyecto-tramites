@@ -10,32 +10,41 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::get('/home', function () {return view('principal');});
 //HOME
-Route::get('/', function (){return view('login');});
+Route::group(['middleware' => 'web'], function(){
+	Route::auth();
+	Route::get('/', function () {return view('principal');
+	});
 
-Route::post('/principal','ejemplocontroller@master');
-Route::get('/principal', function (){return view('/principal');});
+	Route::get('/home', 'HomeController@index');
+	Route::get('/perfil', function() {return view('perfil');});
 
-Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
-Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
+	Route::get('/principal', function (){return view('/principal');});
+
+	Route::get('/tramitarActaNac', function (){return view('tramitarActaNac');});
+	Route::post('/enviarActa', 'ejemplocontroller@enviarActa');
 
 
-Route::get('/licencia', function (){return view('licencia');});
+	Route::get('/licencia', function (){return view('licencia');});
 
-Route::get('/visa', function(){return view('/visa');});
+	Route::get('/visa', function(){return view('/visa');});
 
-Route::get('/becas', 'ejemplocontroller@becas');
+	Route::get('/becas', 'ejemplocontroller@becas');
 
-Route::post('/guardarVisa', 'ejemplocontroller@guardarVisa');
-Route::post('/guardarLicencia', 'ejemplocontroller@guardarLicencia');
+	Route::post('/guardarVisa', 'ejemplocontroller@guardarVisa');
+	Route::post('/guardarLicencia', 'ejemplocontroller@guardarLicencia');
 
-Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
-Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
+	Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
+	Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
 
-Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
-Route::get('/infoperfil/{id}', 'ejemplocontroller@infoperfil');
-Route::get('/notificaciones', function (){return view('notificaciones');});
-Route::get('/registrarusuario', function (){return view('registrarusuario	');});
-Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
+	Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
+	Route::get('/infoperfil', function (){return view('/infoperfil');});
+	Route::get('/notificaciones', function (){return view('notificaciones');});
+	Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
+
+});
+
+//Route::get('/', function (){return view('login');});
+
 

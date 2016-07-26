@@ -1,9 +1,8 @@
-@extends('master')
+@extends('layouts.app')
 @section('encabezado')
-<h1>Acta de nacimiento</h1>
+<h1>Acta de Nacimiento</h1>
 @stop
-
-@section('contenido')
+@section('content')
 
 <script>
 $(document).ready(function(){

@@ -1,8 +1,9 @@
-@extends('master')
+@extends('layouts.app')
 @section('encabezado')
-<h1>Renovar Licencia para conducir</h1>
+<h1>Tramites de Licencia</h1>
 @stop
-@section('contenido')
+
+@section('content')
 
 <form action="{{url('/guardarLicencia')}}" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">

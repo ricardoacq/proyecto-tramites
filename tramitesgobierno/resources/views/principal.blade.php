@@ -1,10 +1,9 @@
-@extends('master')
+@extends('layouts.app')
 @section('encabezado')
-<h1>Preguntas frecuentes</h1>
-<p>Para realizar cualquier tramite tiebes que tener tu cuenta en TramitesGubernamentales.com</p>
+<h1>Preguntas Frecuentes</h1>
 @stop
 
-@section('contenido')
+@section('content')
 	@if(Session::has('message'))
 		<div class="alert alert-success">
 			{{Session::get('message')}}

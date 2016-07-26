@@ -14,4 +14,4 @@
 		<span class="label label-success" value="">{{ Auth::user()->curp }}</span><br>
 
 	</form>
-@endsection
+@stop

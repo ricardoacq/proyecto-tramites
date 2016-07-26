@@ -1,9 +1,9 @@
-@extends('master')
+@extends('layouts.app')
 @section('encabezado')
-<h1>Solicitud de beca</h1>
+<h1>Solicitud de becas</h1>
 @stop
 
-@section('contenido')
+@section('content')
 
 <form action="#" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
