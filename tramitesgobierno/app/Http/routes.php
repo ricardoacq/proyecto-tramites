@@ -51,5 +51,4 @@ Route::get('/infoperfil/{id}', 'ejemplocontroller@infoperfil');
 Route::get('/notificaciones', 'ejemplocontroller@notificaciones');
 Route::get('/registrarusuario', function (){return view('registrarusuario	');});
 Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
-4a814c7949a9271e0236e8dbbdb8c75f34b961e2
 
