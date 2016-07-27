@@ -31,14 +31,15 @@ Route::group(['middleware' => 'web'], function(){
 	Route::get('/visa', function(){return view('/visa');});
 
 	Route::get('/becas', 'ejemplocontroller@becas');
+	Route::post('/guardarBeca/{curp}', 'ejemplocontroller@guardarBeca');
 
-	Route::post('/guardarVisa', 'ejemplocontroller@guardarVisa');
-	Route::post('/guardarLicencia', 'ejemplocontroller@guardarLicencia');
+	Route::post('/guardarVisa/{curp}', 'ejemplocontroller@guardarVisa');
+	Route::post('/guardarLicencia/{curp}', 'ejemplocontroller@guardarLicencia');
 
 	Route::get('/perfil/{id}', 'ejemplocontroller@perfil');
 	Route::post('/actualizarusuario/{id}', 'ejemplocontroller@actualizarusuario');
 
-	Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
+	Route::get('/mostrarperfil', function (){return view('infoperfil');});
 	Route::get('/infoperfil', function (){return view('/infoperfil');});
 	Route::get('/notificaciones', function (){return view('notificaciones');});
 	Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');

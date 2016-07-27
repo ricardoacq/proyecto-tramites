@@ -4,7 +4,7 @@
 @stop
 @section('content')
 
-<form action="{{url('/guardarVisa')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('/guardarVisa')}}/{{ Auth::user()->curp }}" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<label for="">Formato de solicitud de VISA</label><br>

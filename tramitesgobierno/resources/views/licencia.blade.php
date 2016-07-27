@@ -5,7 +5,7 @@
 
 @section('content')
 
-<form action="{{url('/guardarLicencia')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('/guardarLicencia')}}/{{ Auth::user()->curp }}" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
 		<label for="">Acta de nacimiento</label>
