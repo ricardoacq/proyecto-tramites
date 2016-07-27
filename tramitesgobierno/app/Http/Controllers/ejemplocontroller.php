@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Acta;
 use App\usuario;
 use App\user;
+use App\tramites;
 
 use DB;
 
@@ -106,6 +107,11 @@ class ejemplocontroller extends Controller
     //Volvemos al inicio tras haber completado la solicitud
 
     return redirect('/principal');
+  }
+  public function mostrarnotificaciones(){
+     $tramites=DB::table('tramites')
+    return view('notificaciones',compact('tramites'));
+     
   }
 
 

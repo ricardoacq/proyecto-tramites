@@ -1,21 +1,25 @@
-extends('mostrarperfil')
+ extends('mostrarperfil')
 @section('info') 
 
 <table class="table table-hover">
 					<thead>
 						<tr>
+							<th>Id</th>
+							<th>tramite</th>
 							<th>Curp</th>
-							<th>Tipo</th>
-							<th>Estado</th>
+							<th>Num. de tramite</th>
+							<th>Estado de solicitud</th>
 							
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($solicitudes as $s)
+						@foreach($tramites as $t)
 							<tr>
-								<td>{{$s->id}}</td>
-								<td>{{$s->nombre}}</td>
-								<td>{{$s->telefono}}</td>
+								<td>{{$t->id}}</td>
+								<td>{{$t->tramite}}</td>
+								<td>{{$t->curp}}</td>
+								<td>{{$t->id_tramite}}</td>
+								<td>{{$t->estado}}</td>
 								<td><a href="{{url('eliminarCliente')}}/{{$c->id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Aceptar</a>
 									<a href="{{url('modificarCliente')}}/{{$c->id}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Rechazar</a>
 								</td>
@@ -23,8 +27,6 @@ extends('mostrarperfil')
 						@endforeach
 					</tbody>
 				</table>
-
-
 
 
 
