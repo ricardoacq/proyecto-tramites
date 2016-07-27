@@ -43,6 +43,8 @@ Route::group(['middleware' => 'web'], function(){
 	Route::get('/infoperfil', function (){return view('/infoperfil');});
 	Route::get('/notificaciones', function (){return view('notificaciones');});
 	Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
+	Route::get('/notificaciones', 'ejemploController@mostrarnotificaciones');
+
 
 });
 

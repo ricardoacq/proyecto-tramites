@@ -8,7 +8,7 @@ use App\Acta;
 use App\usuario;
 use App\user;
 use App\Beca;
-
+use App\tramites;
 use DB;
 
 class ejemplocontroller extends Controller
@@ -27,7 +27,6 @@ class ejemplocontroller extends Controller
 
   public function enviarActa(Request $Request){
   	$acta = new Acta();
-
   	$acta->id = $Request->input('curp');
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
@@ -38,8 +37,15 @@ class ejemplocontroller extends Controller
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
   	$acta->save();
+    $idacta=acta::all()->last();
+   
+    $tramites = new tramites();
+    $tramites->curp = $Request->input('curp');
+    $tramites->id_tramite = $idacta->id;
+    $tramites->save();
 
   	return redirect('/principal')->with('message', 'Exito');
+
   }
   public function becas(){
     return view('becas');
@@ -113,6 +119,12 @@ class ejemplocontroller extends Controller
     \Storage::disk('local')->put($nombre4.'.'.$extension4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
     return redirect('/principal')->with('message', 'Exito');
+  }
+  public function mostrarnotificaciones(){
+     $tramites=tramites::get();
+    
+    return view('notificaciones',compact('tramites'));
+     
   }
 
   public function guardarBeca(Request $Request, $curp){
