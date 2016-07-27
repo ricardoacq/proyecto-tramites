@@ -28,6 +28,8 @@ class ejemplocontroller extends Controller
   public function enviarActa(Request $Request){
   	$acta = new Acta();
 
+
+
   	$acta->id = $Request->input('curp');
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
@@ -38,6 +40,17 @@ class ejemplocontroller extends Controller
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
   	$acta->save();
+
+    $idacta=acta::all()->last();
+   
+
+     $tramites = new tramites();
+
+        $tramites->curp = $Request->input('curp');
+        $tramites->id_tramite = $idacta->id;
+
+          $tramites->save();
+
 
   	return redirect('/tramitarActaNac');
   }
@@ -109,7 +122,8 @@ class ejemplocontroller extends Controller
     return redirect('/principal');
   }
   public function mostrarnotificaciones(){
-     $tramites=DB::table('tramites')
+     $tramites=tramites::get();
+    
     return view('notificaciones',compact('tramites'));
      
   }
