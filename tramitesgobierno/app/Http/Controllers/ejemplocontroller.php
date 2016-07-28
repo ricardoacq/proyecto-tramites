@@ -7,8 +7,8 @@ use App\Http\Requests;
 use App\Acta;
 use App\usuario;
 use App\user;
+use App\Beca;
 use App\tramites;
-
 use DB;
 
 class ejemplocontroller extends Controller
@@ -27,9 +27,6 @@ class ejemplocontroller extends Controller
 
   public function enviarActa(Request $Request){
   	$acta = new Acta();
-
-
-
   	$acta->id = $Request->input('curp');
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
@@ -40,19 +37,15 @@ class ejemplocontroller extends Controller
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
   	$acta->save();
-
     $idacta=acta::all()->last();
    
+    $tramites = new tramites();
+    $tramites->curp = $Request->input('curp');
+    $tramites->id_tramite = $idacta->id;
+    $tramites->save();
 
-     $tramites = new tramites();
+  	return redirect('/principal')->with('message', 'Exito');
 
-        $tramites->curp = $Request->input('curp');
-        $tramites->id_tramite = $idacta->id;
-
-          $tramites->save();
-
-
-  	return redirect('/tramitarActaNac');
   }
   public function becas(){
     return view('becas');
@@ -84,47 +77,53 @@ class ejemplocontroller extends Controller
     return redirect('/principal');
   }
 
-  public function guardarVisa(Request $Request){
+  public function guardarVisa(Request $Request, $curp){
     //Se obtiene el campo definido en el formulario
     $archivo1 = $Request->file('solicitud');
     $archivo2 = $Request->file('pasaporte');
     $archivo3 = $Request->file('foto');
     $archivo4 = $Request->file('estancia');
     //Se saca el nombre del archivo
-    $nombre1 = $archivo1->getClientOriginalName();
-    $nombre2 = $archivo2->getClientOriginalName();
-    $nombre3 = $archivo3->getClientOriginalName();
-    $nombre4 = $archivo4->getClientOriginalName();
+    $nombre1 = 'Solicitud'.$curp;
+    $nombre2 = 'Pasaporte'.$curp;
+    $nombre3 = 'Foto'.$curp;
+    $nombre4 = 'Estancia'.$curp;
+    //Obtener la extencion de los archivos
+    $extension1 = $archivo1->getClientOriginalExtension();
+    $extension2 = $archivo2->getClientOriginalExtension();
+    $extension3 = $archivo3->getClientOriginalExtension();
+    $extension4 = $archivo4->getClientOriginalExtension();
     //Indicar que se va a guardar un archivo en el disco local
-    \Storage::disk('visas')->put($nombre1, \File::get($archivo1));
-    \Storage::disk('visas')->put($nombre2, \File::get($archivo2));
-    \Storage::disk('visas')->put($nombre3, \File::get($archivo3));
-    \Storage::disk('visas')->put($nombre4, \File::get($archivo4));
+    \Storage::disk('visas')->put($nombre1.'.'.$extension1, \File::get($archivo1));
+    \Storage::disk('visas')->put($nombre2.'.'.$extension2, \File::get($archivo2));
+    \Storage::disk('visas')->put($nombre3.'.'.$extension3, \File::get($archivo3));
+    \Storage::disk('visas')->put($nombre4.'.'.$extension4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
     return redirect('/principal')->with('message', 'Exito');
   }
-  public function guardarLicencia(Request $Request){
+  public function guardarLicencia(Request $Request, $curp){
     //Se obtiene el campo definido en el formulario
     $archivo1 = $Request->file('acta');
     $archivo2 = $Request->file('comprobante');
     $archivo3 = $Request->file('ine');
     $archivo4 = $Request->file('licencia');
     //Se saca el nombre del archivo
-    //$nombre='acta$id'
-    //$extension = $archivo.getClientOriginalExtension();
-    $nombre1 = $archivo1->getClientOriginalName();
-    $nombre2 = $archivo2->getClientOriginalName();
-    $nombre3 = $archivo3->getClientOriginalName();
-    $nombre4 = $archivo4->getClientOriginalName();
+    $nombre1 = 'acta'.$curp;
+    $nombre2 = 'Domicilio'.$curp;
+    $nombre3 = 'INE'.$curp;
+    $nombre4 = 'Licencia'.$curp;
+    //Obtener la extencion de los archivos
+    $extension1 = $archivo1->getClientOriginalExtension();
+    $extension2 = $archivo2->getClientOriginalExtension();
+    $extension3 = $archivo3->getClientOriginalExtension();
+    $extension4 = $archivo4->getClientOriginalExtension();
     //Indicar que se va a guardar un archivo en el disco local
-    //\Storage::disk('local')->put($nombre.'.'.$extension, \File::get($archivo));
-    \Storage::disk('local')->put($nombre1, \File::get($archivo1));
-    \Storage::disk('local')->put($nombre2, \File::get($archivo2));
-    \Storage::disk('local')->put($nombre3, \File::get($archivo3));
-    \Storage::disk('local')->put($nombre4, \File::get($archivo4));
+    \Storage::disk('local')->put($nombre1.'.'.$extension1, \File::get($archivo1));
+    \Storage::disk('local')->put($nombre2.'.'.$extension2, \File::get($archivo2));
+    \Storage::disk('local')->put($nombre3.'.'.$extension3, \File::get($archivo3));
+    \Storage::disk('local')->put($nombre4.'.'.$extension4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
-
-    return redirect('/principal');
+    return redirect('/principal')->with('message', 'Exito');
   }
   public function mostrarnotificaciones(){
      $tramites=tramites::get();
@@ -133,5 +132,46 @@ class ejemplocontroller extends Controller
      
   }
 
+  public function guardarBeca(Request $Request, $curp){
+
+    //Se obtiene el campo definido en el formulario
+    $archivo1 = $Request->file('acta');
+    $archivo2 = $Request->file('comprobanteD');
+    $archivo3 = $Request->file('foto');
+    $archivo4 = $Request->file('constancia');
+    $archivo5 = $Request->file('comprobanteI');
+    //Se saca el nombre del archivo
+    $nombre1 = 'acta'.$curp;
+    $nombre2 = 'Domicilio'.$curp;
+    $nombre3 = 'Foto'.$curp;
+    $nombre4 = 'Constancia'.$curp;
+    $nombre5 = 'Ingresos'.$curp;
+    //Obtener la extencion de los archivos
+    $extension1 = $archivo1->getClientOriginalExtension();
+    $extension2 = $archivo2->getClientOriginalExtension();
+    $extension3 = $archivo3->getClientOriginalExtension();
+    $extension4 = $archivo4->getClientOriginalExtension();
+    $extension5 = $archivo5->getClientOriginalExtension();
+    //Indicar que se va a guardar un archivo en el disco local
+    \Storage::disk('beca')->put($nombre1.'.'.$extension1, \File::get($archivo1));
+    \Storage::disk('beca')->put($nombre2.'.'.$extension2, \File::get($archivo2));
+    \Storage::disk('beca')->put($nombre3.'.'.$extension3, \File::get($archivo3));
+    \Storage::disk('beca')->put($nombre4.'.'.$extension4, \File::get($archivo4));
+    \Storage::disk('beca')->put($nombre5.'.'.$extension5, \File::get($archivo5));
+    //some crazy shit
+    $beca = new Beca();
+    $beca->curp = $curp;
+    $beca->beca = $Request->input('beca');
+    $beca->acta = $nombre1;
+    $beca->compdomicilio = $nombre2;
+    $beca->foto = $nombre3;
+    $beca->constancia = $nombre4;
+    $beca->compingresos = $nombre5;
+    $beca->save();
+
+     //Volvemos al inicio tras haber completado la solicitud
+    return redirect('/principal')->with('message', 'Exito');
+
+  }
 
 }

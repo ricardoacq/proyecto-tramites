@@ -5,25 +5,13 @@
 
 @section('content')
 
-<form action="#" method="POST" enctype="multipart/form-data">
+<form action="{{url('/guardarBeca')}}/{{ Auth::user()->curp }}" method="POST" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">
-		<label for="">Beca:</label>		
+		<label for="">Beca</label>		
 		<select class ="form-control" name="beca">
-			<option value="">Becas.</option>
+			<option value="beca">Becas.</option>
 		</select>	
-		<hr>
-		<label for="">Nombre(s):</label>
-		<input type="text" class="form-control" name="nombre" maxlength="18" value="">
-		<hr>
-		<label for="">Apellido Paterno:</label>
-		<input type="text" class="form-control" name="apellidoP" maxlength="18" value="">
-		<hr>
-		<label for="">Apellido Materno:</label>
-		<input type="text" class="form-control" name="apellidoM" maxlength="18" value="">
-		<hr>
-		<label for="">CURP:</label>
-		<input type="text" class="form-control" name="curp" maxlength="18" value="">
 		<hr>
 		<label for="">Acta de nacimiento</label>
 		<input name="acta" type="file" class="form-control">
