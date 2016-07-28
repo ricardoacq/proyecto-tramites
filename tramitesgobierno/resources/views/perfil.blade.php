@@ -5,7 +5,7 @@
 
 @section('content')
 
-<form action="{{url('actualizarusuario')}}/{{ Auth::user()->id }}" method="POST" class="col-xs-8">
+<form action="{{url('actualizarusuario')}}/{{ Auth::user()->id }}" method="POST" class="col-xs-12">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<div class="form-group">	
 		<label for="">Nombre(s):</label>
