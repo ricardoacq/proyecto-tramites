@@ -41,13 +41,16 @@ Route::group(['middleware' => 'web'], function(){
 
 	Route::get('/mostrarperfil', function (){return view('infoperfil');});
 	Route::get('/infoperfil', function (){return view('/infoperfil');});
-	Route::get('/notificaciones', function (){return view('notificaciones');});
+	
 	Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
-	Route::get('/notificaciones', 'ejemploController@mostrarnotificaciones');
+	Route::get('/notificaciones', 'ejemplocontroller@mostrarnotificaciones');
 
 
 });
 
 //Route::get('/', function (){return view('login');});
-
+Route::get('/mostrarperfil', function (){return view('mostrarperfil');});
+Route::get('/infoperfil/{id}', 'ejemplocontroller@infoperfil');
+Route::get('/registrarusuario', function (){return view('registrarusuario	');});
+Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
 

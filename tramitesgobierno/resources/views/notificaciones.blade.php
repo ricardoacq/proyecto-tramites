@@ -9,7 +9,6 @@
 							<th>Curp</th>
 							<th>Num. de tramite</th>
 							<th>Estado de solicitud</th>
-							
 						</tr>
 					</thead>
 					<tbody>
@@ -22,6 +21,7 @@
 								<td>{{$t->estado}}</td>
 								<td><a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Aceptar</a>
 									<a href="" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Rechazar</a>
+
 								</td>
 							</tr>
 						@endforeach

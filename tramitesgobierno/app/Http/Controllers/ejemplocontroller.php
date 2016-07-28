@@ -9,6 +9,8 @@ use App\usuario;
 use App\user;
 use App\Beca;
 use App\tramites;
+use App\visa;
+use App\licencia;
 use DB;
 
 class ejemplocontroller extends Controller
@@ -42,6 +44,7 @@ class ejemplocontroller extends Controller
    
     $tramites = new tramites();
     $tramites->curp = $Request->input('curp');
+    $tramites->tramite = 'Acta de nacimiento';
     $tramites->id_tramite = $idacta->id;
     $tramites->save();
 
@@ -57,6 +60,7 @@ class ejemplocontroller extends Controller
      $usuario=DB::table('usuarios')->where('id', '=', $id)->first();
      return view('perfil',compact('usuario'));
   }
+
 
   public function infoperfil($id){
      $usuario=DB::table('user')->where('id', '=', $id)->first();
@@ -95,6 +99,18 @@ class ejemplocontroller extends Controller
     \Storage::disk('visas')->put($nombre3.'.'.$extension3, \File::get($archivo3));
     \Storage::disk('visas')->put($nombre4.'.'.$extension4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
+    $visa = new visa();
+    $visa->curp = $curp;
+    $visa->save();
+    
+    $idvisa=visa::all()->last();
+    
+    $tramites = new tramites();
+    $tramites->curp = $curp;
+    $tramites->tramite = 'Visa';
+    $tramites->id_tramite = $idvisa->id;
+    $tramites->save();
+
     return redirect('/principal')->with('message', 'Exito');
   }
   public function guardarLicencia(Request $Request, $curp){
@@ -119,11 +135,22 @@ class ejemplocontroller extends Controller
     \Storage::disk('local')->put($nombre3.'.'.$extension3, \File::get($archivo3));
     \Storage::disk('local')->put($nombre4.'.'.$extension4, \File::get($archivo4));
     //Volvemos al inicio tras haber completado la solicitud
+    $licencia = new licencia();
+    $licencia->curp = $curp;
+    $licencia->save();
+    
+    $idlic=visa::all()->last();
+    
+    $tramites = new tramites();
+    $tramites->curp = $curp;
+    $tramites->tramite = 'Licencia';
+    $tramites->id_tramite = $idlic->id;
+    $tramites->save();
+
     return redirect('/principal')->with('message', 'Exito');
   }
   public function mostrarnotificaciones(){
      $tramites=tramites::get();
-    
     return view('notificaciones',compact('tramites'));
      
   }
@@ -164,6 +191,15 @@ class ejemplocontroller extends Controller
     $beca->constancia = $nombre4;
     $beca->compingresos = $nombre5;
     $beca->save();
+    
+    $idbeca=Beca::all()->last();
+    
+    $tramites = new tramites();
+    $tramites->curp = $idbeca->curp;
+    $tramites->tramite = 'Beca';
+    $tramites->id_tramite = $idbeca->id;
+    $tramites->save();
+
 
      //Volvemos al inicio tras haber completado la solicitud
     return redirect('/principal')->with('message', 'Exito');
