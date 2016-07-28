@@ -27,7 +27,7 @@ class ejemplocontroller extends Controller
 
   public function enviarActa(Request $Request){
   	$acta = new Acta();
-  	$acta->id = $Request->input('curp');
+  	$acta->curp = $Request->input('curp');
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
@@ -36,6 +36,7 @@ class ejemplocontroller extends Controller
     $dia = $Request->input('dia');
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
+    dd($acta);
   	$acta->save();
     $idacta=acta::all()->last();
    

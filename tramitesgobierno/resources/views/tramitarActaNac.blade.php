@@ -62,7 +62,7 @@ $(document).ready(function(){
 		<label for"">Mes:</label>
 		<input type="text" class="form-control" id="month" name="mes" value="" maxlength="2" placeholder="mm">
 		<label for="">Año:</label>
-		<input type="text" class="form-control" id="year" name="año" value="" maxlength="4" placeholder="yyyy">
+		<input type="text" class="form-control" id="year" name="ano" value="" maxlength="4" placeholder="yyyy">
 	</div>
 	<hr>
 	<div class="form-group">
