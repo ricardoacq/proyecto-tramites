@@ -44,6 +44,7 @@ class ejemplocontroller extends Controller
     $tramites = new tramites();
     $tramites->curp = $Request->input('curp');
     $tramites->tramite = 'Acta de nacimiento';
+    $tramites->estado = 'Pendiente';
     $tramites->id_tramite = $idacta->id;
     $tramites->save();
 
@@ -107,6 +108,7 @@ class ejemplocontroller extends Controller
     $tramites = new tramites();
     $tramites->curp = $curp;
     $tramites->tramite = 'Visa';
+    $tramites->estado = 'Pendiente';
     $tramites->id_tramite = $idvisa->id;
     $tramites->save();
 
@@ -143,6 +145,7 @@ class ejemplocontroller extends Controller
     $tramites = new tramites();
     $tramites->curp = $curp;
     $tramites->tramite = 'Licencia';
+    $tramites->estado = 'Pendiente';
     $tramites->id_tramite = $idlic->id;
     $tramites->save();
 
@@ -196,6 +199,7 @@ class ejemplocontroller extends Controller
     $tramites = new tramites();
     $tramites->curp = $idbeca->curp;
     $tramites->tramite = 'Beca';
+    $tramites->estado = 'Pendiente';
     $tramites->id_tramite = $idbeca->id;
     $tramites->save();
 
