@@ -9,13 +9,11 @@
 							<th>Curp</th>
 							<th>Num. de tramite</th>
 							<th>Estado de solicitud</th>
-							
 						</tr>
 					</thead>
 					<tbody>
 						@foreach($tramites as $t)
 							<tr>
-
 								<td>{{$t->id}}</td>
 								<td>{{$t->tramite}}</td>
 								<td>{{$t->curp}}</td>
