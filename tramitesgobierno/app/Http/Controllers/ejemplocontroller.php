@@ -38,7 +38,6 @@ class ejemplocontroller extends Controller
     $dia = $Request->input('dia');
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
-    dd($acta);
   	$acta->save();
     $idacta=acta::all()->last();
    
