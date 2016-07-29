@@ -69,13 +69,13 @@ $(document).ready(function(){
 		<h4>Lugar para recoger el documento</h4>
 		<div class="radio">
   			<label>
-    			<input type="radio" name="radios" id="optionsRadios1" value="option1" checked>
+    			<input type="radio" name="radios" id="optionsRadios1" value="Unidad de Servicios Estatales" checked>
    				 Unidad de Servicios Estatales
   			</label>
 		</div>
 		<div class="radio">
 		 	<label>
-		    	<input type="radio" name="radios" id="optionsRadios2" value="option2">
+		    	<input type="radio" name="radios" id="optionsRadios2" value="Ayuntamiento">
 		    	Ayuntamiento
 			</label>
 		</div>

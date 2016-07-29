@@ -10,7 +10,11 @@
 	<div class="form-group">
 		<label for="">Beca</label>		
 		<select class ="form-control" name="beca">
-			<option value="beca">Becas.</option>
+			<option value="manutencion">Beca de manutencion</option>
+			<option value="transporte">Beca de transporte</option>
+			<option value="servicio">Beca de servicio social</option>
+			<option value="extrangero">Beca de estudios en el extrangero</option>
+			<option value="T___T">Beca de no tengo dinero T__T</option>
 		</select>	
 		<hr>
 		<label for="">Acta de nacimiento</label>

@@ -45,6 +45,10 @@ Route::group(['middleware' => 'web'], function(){
 	Route::post('/guardarusuario', 'ejemplocontroller@guardarusuario');
 	Route::get('/notificaciones', 'ejemplocontroller@mostrarnotificaciones');
 
+	Route::get('/detalles/{id}', 'ejemplocontroller@mostrardetalles');
+	Route::post('/aprobar/{id}', 'ejemplocontroller@aprobar');
+	Route::post('/rechazar/{id}', 'ejemplocontroller@rechazar');
+
 
 });
 

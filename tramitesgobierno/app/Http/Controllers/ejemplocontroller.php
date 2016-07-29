@@ -33,12 +33,13 @@ class ejemplocontroller extends Controller
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
-  	$anio = $Request->input('ano');
+  	$anio = $Request->input('año');
   	$mes = $Request->input('mes');
     $dia = $Request->input('dia');
     $fecha="$anio-$mes-$dia 00:00:00";
   	$acta->fechanacimiento = $fecha;
-  	$acta->save();
+  	$acta->lugar = $Request->input('radios');
+    $acta->save();
     $idacta=acta::all()->last();
    
     $tramites = new tramites();
@@ -140,8 +141,7 @@ class ejemplocontroller extends Controller
     $licencia->curp = $curp;
     $licencia->save();
     
-    $idlic=visa::all()->last();
-    
+    $idlic=licencia::all()->last();
     $tramites = new tramites();
     $tramites->curp = $curp;
     $tramites->tramite = 'Licencia';
@@ -152,7 +152,7 @@ class ejemplocontroller extends Controller
     return redirect('/principal')->with('message', 'Exito');
   }
   public function mostrarnotificaciones(){
-     $tramites=tramites::get();
+    $tramites=tramites::where('estado','=','Pendiente')->get();
     return view('notificaciones',compact('tramites'));
      
   }
@@ -187,26 +187,58 @@ class ejemplocontroller extends Controller
     $beca = new Beca();
     $beca->curp = $curp;
     $beca->beca = $Request->input('beca');
-    $beca->acta = $nombre1;
-    $beca->compdomicilio = $nombre2;
-    $beca->foto = $nombre3;
-    $beca->constancia = $nombre4;
-    $beca->compingresos = $nombre5;
     $beca->save();
-    
+
     $idbeca=Beca::all()->last();
-    
+   
     $tramites = new tramites();
     $tramites->curp = $idbeca->curp;
     $tramites->tramite = 'Beca';
     $tramites->estado = 'Pendiente';
     $tramites->id_tramite = $idbeca->id;
     $tramites->save();
-
-
      //Volvemos al inicio tras haber completado la solicitud
     return redirect('/principal')->with('message', 'Exito');
 
   }
 
+  public function mostrardetalles($id){
+    $tramites=tramites::find($id);
+    
+    switch ($tramites->tramite) {
+     
+      case 'Acta de nacimiento':
+        $tramite = Acta::find($tramites->id_tramite);
+        return view('infoacta',compact('tramite', 'id'));
+        break;
+
+      case 'Beca':
+        $tramite = Beca::find($tramites->id_tramite);
+        return view('infobeca',compact('tramite', 'id'));
+        break;
+
+      case 'Visa':
+        $tramite = visa::find($tramites->id_tramite);
+        return view('infovisa',compact('tramite', 'id'));
+        break;
+
+      case 'Licencia':
+        $tramite = licencia::find($tramites->id_tramite);
+        return view('infolicencia',compact('tramite', 'id'));
+        break;
+      
+    }
+  }
+   public function aprobar($id){
+    $tramites=tramites::find($id);
+    $tramites->estado='Aprobado';
+    $tramites->save();
+    return redirect('notificaciones');
+   }
+   public function rechazar($id){
+    $tramites=tramites::find($id);
+    $tramites->estado='Rechazado';
+    $tramites->save();
+    return redirect('notificaciones');
+   }
 }
