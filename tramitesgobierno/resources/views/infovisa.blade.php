@@ -6,11 +6,11 @@
 
 	<div class="form-group">
 		<label for="">Solicitud de VISA</label><br>
-		<a href="{{url('visas')}}/{{'Solicitud'.$tramite->curp.'.docx'}}">  Detalles</a>
+		<a href="{{url('visas')}}/{{'Solicitud'.$tramite->curp.'.jpg'}}">  Detalles</a>
 		<hr>
 
 		<label for="">Pasaporte vigente</label><br>
-		<a href="{{url('visas')}}/{{'Pasaporte'.$tramite->curp.'.docx'}}">  Detalles</a>
+		<a href="{{url('visas')}}/{{'Pasaporte'.$tramite->curp.'.jpg'}}">  Detalles</a>
 		<hr>
 
 		<label for="">Fotografia reciente (no mayor a 6 meses)</label><br>
@@ -18,7 +18,7 @@
 		<hr>
 
 		<label for="">*Documento de estancia legal</label><br>
-		<a href="{{url('visas')}}/{{'Estancia'.$tramite->curp.'.docx'}}">  Detalles</a>
+		<a href="{{url('visas')}}/{{'Estancia'.$tramite->curp.'.jpg'}}">  Detalles</a>
 		<hr>
 		<div class="form-group">
 		

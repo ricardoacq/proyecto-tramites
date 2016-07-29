@@ -21,7 +21,7 @@
 		<input name="licencia" type="file" class="form-control">
 	</div>
 	<div class="col-xs-12 well">
-		<label>*Los archivos deben de ser subidos con imagen clara para su correcta verificacion.</label>
+		<label>*Los archivos deben de ser subidos con imagen clara y en formato .jpg para su correcta verificacion.</label>
 	</div>
 	<div class="text-center">
 		<input type="submit" class="btn btn-primary">
