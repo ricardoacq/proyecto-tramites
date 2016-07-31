@@ -33,7 +33,7 @@ class ejemplocontroller extends Controller
   	$acta->nombre = $Request->input('nombre');
   	$acta->apellidop = $Request->input('apellidoPaterno');
   	$acta->apellidom = $Request->input('apellidoMaterno');
-  	$anio = $Request->input('año');
+  	$anio = $Request->input('ano');
   	$mes = $Request->input('mes');
     $dia = $Request->input('dia');
     $fecha="$anio-$mes-$dia 00:00:00";
